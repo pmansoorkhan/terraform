@@ -1,3 +1,9 @@
+variable "environment" {
+    type = string
+    default = "dev"
+}
+
+
 variable "ami_id" {
     type = string
     default = "ami-0220d79f3f480ecf5"
@@ -17,13 +23,13 @@ variable "ec2_tags" {
      project = "roboshop"
      Terraform = "true"
      Environment = "Dev"
-     Date= "06-03-2026"
+     Date= "08-03-2026"
    }
 }
 
 variable "sg_name"{
     type = string
-    default = "allow_all_terraform-default"
+    default = "allow_all_terraform"
 }
 
 variable "sg_description"{
