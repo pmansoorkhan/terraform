@@ -6,3 +6,12 @@ resource "aws_route53_record" "www" {
   ttl     = 1
   records = [aws_instance.example[count.index].private_ip]  
 }
+
+# roboshop.shannu.online -- getting public ip
+resource "aws_route53_record" "www" {
+  zone_id = var.zone_id
+  name    = "roboshop.${var.domain_name}"  # roboshop.shannu.online 
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.example[index(var.instances,"frontend")].public_ip]  
+}
